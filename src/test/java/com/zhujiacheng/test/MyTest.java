@@ -20,6 +20,13 @@ public class MyTest {
     @Resource
     private IUserService iUserService;
 
+    @Test
+    public void testGit(){
+
+        System.out.println("你要点脸");
+
+    }
+
 
     @Test
     public void getList(){
