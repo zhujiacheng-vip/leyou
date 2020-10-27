@@ -32,4 +32,7 @@ public class User implements Serializable {
     @TableField("age")
     private Integer age;
 
+    @TableField("status")
+    private Integer status;
+
 }

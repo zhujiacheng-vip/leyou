@@ -1,6 +1,8 @@
 package com.zhujiacheng.test;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.conditions.update.UpdateChainWrapper;
 import com.zhujiacheng.pojo.User;
 import com.zhujiacheng.service.IUserService;
 import com.zhujiacheng.utils.ExcelUtil;
@@ -96,6 +98,23 @@ public class MyTest {
 
             user.setId(1);
             iUserService.save(user);
+
+        });
+
+    }
+
+    @Test
+    public void getUsers(){
+
+        QueryWrapper queryWrapper = new QueryWrapper(new User());
+
+        queryWrapper.eq("status",0);
+
+        List list = iUserService.list(queryWrapper);
+
+        list.forEach(user->{
+
+            System.out.println(user);
 
         });
 
