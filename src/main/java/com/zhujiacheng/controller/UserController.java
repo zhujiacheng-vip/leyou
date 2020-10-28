@@ -1,9 +1,12 @@
 package com.zhujiacheng.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.zhujiacheng.service.IUserService;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -13,8 +16,17 @@ import org.springframework.stereotype.Controller;
  * @author zhujiacheng
  * @since 2020-10-15
  */
-@Controller
-@RequestMapping("/user")
+@RestController
 public class UserController {
+
+    @Resource
+    private IUserService iUserService;
+
+    @GetMapping("test")
+    public String test(){
+
+        return "hello word";
+    }
+
 
 }
